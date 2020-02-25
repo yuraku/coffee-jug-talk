@@ -4,4 +4,4 @@
 target/
 /diagnostics-*.log
 allure-results
-
+binaries/
