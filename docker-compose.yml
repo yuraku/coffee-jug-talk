@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  management-center:
+    image: hazelcast/management-center
+    container_name: mancenter
+    ports:
+      - "8080:8080"
+  hazelcast-imdg:
+    image: hazelcast/hazelcast
+    container_name: cluster
+    environment:
+      JAVA_OPTS: -Dhazelcast.local.publicAddress=host.docker.internal:5701
+    depends_on:
+      - management-center
+    ports:
+      - "5701:5701"
+  ui-tests:
+    build:
+      dockerfile: ops/Tests.Dockerfile
+      context: ./
+    container_name: ui-tests
+    env_file: .env
+    environment:
+      MC_START_URL: http://management-center:8080
+    depends_on:
+      - hazelcast-imdg
