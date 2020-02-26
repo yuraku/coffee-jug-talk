@@ -1,4 +1,4 @@
-FROM hazelcast/maven-dependencies:latest
+FROM hazelcast/maven-dependencies:4.0
 
 ENV browser chrome
 ENV TINI_VERSION v0.18.0
