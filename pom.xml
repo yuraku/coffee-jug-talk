@@ -27,7 +27,7 @@
         <owner.version>1.0.10</owner.version>
 
         <apiguardian.version>1.1.0</apiguardian.version>
-        <plexus.utils.version>1.1</plexus.utils.version>
+        <plexus.utils.version>3.0.16</plexus.utils.version>
 
         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
         <allure.html.folder.name>allure-report</allure.html.folder.name>
